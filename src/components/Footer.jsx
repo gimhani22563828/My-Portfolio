@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Scroll-up button at the bottom-left corner */}
+      
       <button
         onClick={scrollToTop}
         className="absolute bottom-4 right-4 bg-gray-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors"
