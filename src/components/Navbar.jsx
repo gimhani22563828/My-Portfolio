@@ -5,8 +5,8 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full h-20 sticky top-0 z-50 bg-gray-950 text-white mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600 px-4 md:px-8">
-      <div className="flex items-center space-x-5 px-2 md:px-0">
+    <nav className="w-full h-20 sticky top-0 z-50 bg-gray-950 text-white mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600 px-4 md:px-20">
+      <div className="flex items-center space-x-5 px-2 md:px-0 lg:px-24" >
         {/* Padding before the logo on mobile */}
         <div className="pr-4 md:pr-2">
           <img
@@ -15,7 +15,7 @@ const Navbar = () => {
             className="mx-auto mb-2 w-10 h-10 rounded-full object-cover transform transition-transform duration-300 hover:scale-105"
           />
         </div>
-        <div className="text-2xl font-normal">Poornima Gimhani</div>
+        <div className="text-2xl font-bold md-inline">Poornima Gimhani</div>
       </div>
 
       {/* Desktop Menu */}

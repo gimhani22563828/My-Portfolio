@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import HeroImage from "../assets/mypic2.png";
-import CV from "../assets/J.M.K. Poornima Gimhani -CV.pdf";
+import CV from "../assets/J.M.K. Poornima Gimhani CV.pdf";
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 // Define motion variants
@@ -21,8 +21,8 @@ const iconVariants = {
 
 const Hero = () => {
   return (
-    <div className="bg-gray-900 text-white py-20" id="home">
-      <div className="container mt-10 mx-auto px-6 lg:px-24 flex flex-col-reverse md:flex-row items-center justify-between">
+    <div className="bg-gray-900 text-white py-24" id="home">
+      <div className="container mt-10 mx-auto px-6  flex flex-col-reverse md:flex-row items-center justify-between">
         
         <motion.div
           className="flex-1 text-center md:text-left mb-8 md:mb-0"
@@ -32,20 +32,20 @@ const Hero = () => {
           viewport={{ once: true }}
         >
           <div className="flex flex-col gap-3">
-            <h4 className="text-lg font-normal text-gray-300 mb-4">WELCOME TO MY WORLD</h4>
+            <h4 className="text-lg font-normal text-gray-300 mb-24">WELCOME TO MY WORLD</h4>
             <h1 className="text-4xl font-bold">
               Hi, I'm{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
                 POORNIMA GIMHANI
               </span>
             </h1>
-            <h2 className="text-3xl font-semibold mt-3">Full-Stack Developer</h2>
-            <p className="mt-3 text-lg text-gray-300">
+            <h2 className="text-3xl font-semibold mt-5">Full-Stack Developer</h2>
+            <p className="mt-5  text-gray-300 text-xl">
               I am a passionate full-stack developer with a focus on building modern and responsive web applications. With a strong foundation in both frontend and backend technologies, 
               I strive to create seamless and efficient user experiences.
             </p>
             <div className="mt-5">
-              <h4 className="text-lg font-normal text-gray-300 mb-4">FIND ME IN</h4>
+              <h4 className="text-lg font-normal text-gray-300 mb-5">FIND ME IN</h4>
               <div className="flex justify-center md:justify-start gap-6">
                   <motion.div
                       whileHover={iconVariants.hover}

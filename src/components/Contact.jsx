@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaMapMarkedAlt, FaPhone } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -12,42 +14,49 @@ const Contact = () => {
 
   const validate = () => {
     const newErrors = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    }
-
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
     } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) {
       newErrors.email = 'Enter a valid email address';
     }
-
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    }
-
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
     return newErrors;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validate();
-
     if (Object.keys(validationErrors).length === 0) {
-      console.log('Form submitted successfully', formData);
-      // Reset form
-      setFormData({ name: '', email: '', message: '' });
-      setErrors({});
-      alert('Message sent successfully!');
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      };
+
+      console.log('Sending email with:', templateParams); // Debugging log
+
+      emailjs
+        .send('service_kppdumo', 'template_f7g0kib', templateParams, 'CwtZbktl3SZcIyTrb')
+        .then(
+          () => {
+            setStatus('✅ Message sent successfully!');
+            setFormData({ name: '', email: '', message: '' });
+            setErrors({});
+          },
+          (error) => {
+            setStatus('❌ Error sending message. Please try again later.');
+            console.error('EmailJS Error:', error);
+          }
+        );
     } else {
-      setErrors(validationErrors); 
+      setErrors(validationErrors);
     }
   };
 
   return (
     <div className="bg-gray-900 text-white py-20" id="contact">
-      <div className="container mx-auto px-8 md:px-16 lg:px-24">
+      <div className="container mx-auto px-8 md:px-16">
         <h2 className="text-4xl font-bold text-center mb-12">Contact Me</h2>
         <div className="flex flex-col md:flex-row items-center md:space-x-12">
           <div className="flex-1">
@@ -73,9 +82,7 @@ const Contact = () => {
           <div className="flex-1 w-full">
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="name" className="block mb-2">
-                  Your Name
-                </label>
+                <label htmlFor="name" className="block mb-2">Your Name</label>
                 <input
                   type="text"
                   name="name"
@@ -87,9 +94,7 @@ const Contact = () => {
                 {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
               </div>
               <div>
-                <label htmlFor="email" className="block mb-2">
-                  Email
-                </label>
+                <label htmlFor="email" className="block mb-2">Email</label>
                 <input
                   type="text"
                   name="email"
@@ -101,9 +106,7 @@ const Contact = () => {
                 {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
               </div>
               <div>
-                <label htmlFor="message" className="block mb-2">
-                  Message
-                </label>
+                <label htmlFor="message" className="block mb-2">Message</label>
                 <textarea
                   name="message"
                   value={formData.message}
@@ -116,11 +119,12 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="bg-gradient-to-r from-green-400 to-blue-500 text-white hidden md:inline transform transition-transform duration-300 hover:scale-105 px-8 py-2 rounded-full"
+                className="bg-gradient-to-r from-green-400 to-blue-500 text-white transform transition-transform duration-300 hover:scale-105 px-8 py-2 rounded-full"
               >
                 Send
               </button>
             </form>
+            {status && <p className="text-center mt-4">{status}</p>}
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // Import Framer Motion
 import AboutImage from '../assets/about.png'; 
-import { FaHtml5, FaJsSquare, FaReact, FaNode } from 'react-icons/fa'; 
+import { FaHtml5, FaJsSquare, FaReact,FaJava, FaNode } from 'react-icons/fa'; 
 import { SiTailwindcss } from 'react-icons/si'; 
 
 const About = () => {
@@ -20,14 +20,14 @@ const About = () => {
 
   return (
     <div className="bg-gray-950 text-white py-20" id="about">
-      <div className="container mt-10 mx-auto px-8 md:px-16 lg:px-24">
+      <div className="container mt-10 mx-auto px-8 md:px-16 ">
         <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
         <div className="flex flex-col-reverse md:flex-row items-center md:space-x-6"> {/* Reduced space-x */}
           {/* Text Section */}
           <div className="flex-1 mb-8 ">
             <p className="text-lg mb-8 mt-8"> 
-            Hi there! I'm an undergraduate Information Technology student and a passionate Full-Stack Developer who loves creating functional, efficient, and user-friendly digital experiences. I enjoy designing seamless interfaces and building powerful backends that bring ideas to life.
-            I'm constantly exploring new technologies and sharpening my skills to stay ahead in the fast-evolving tech world. Whether collaborating with a team or working independently, I strive to deliver high-quality, impactful solutions.
+            Hi there! I'm an undergraduate Information Technology student and a passionate Full-Stack Developer who loves creating functional, efficient, and user-friendly digital experiences. I enjoy designing seamless interfaces and building powerful backends that bring ideas to life.<br></br><br></br>
+            I'm constantly exploring new technologies and sharpening my skills to stay ahead in the fast-evolving tech world. Whether collaborating with a team or working independently, I strive to deliver high-quality, impactful solutions.<br></br>
             Beyond coding, I stay inspired by new trends, take on side projects that challenge me to grow, and enjoy exploring fresh ideas. If you're looking for a creative, hardworking, and dedicated developer, let's connect!
             </p>
 
@@ -81,6 +81,17 @@ Beyond coding, I stay inspired by new trends, take on side projects that challen
                     <div
                       className="bg-gradient-to-r from-green-400 to-blue-500 h-2.5 rounded-full w-9/12 transform transition-transform duration-300 hover:scale-105"
                     ></div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <FaJava className="text-red-500 text-2xl" /> 
+                  <label htmlFor="java" className="w-2/12 text-lg font-medium text-gray-200">
+                     Java
+                  </label>
+                  <div className="flex-grow bg-gray-800 rounded-full h-2.5">
+                     <div
+                       className="bg-gradient-to-r from-green-400 to-blue-500 h-2.5 rounded-full w-11/12 transform transition-transform duration-300 hover:scale-105"
+                     ></div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
