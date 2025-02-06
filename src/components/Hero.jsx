@@ -67,7 +67,7 @@ const Hero = () => {
                        whileHover={iconVariants.hover}
                           className="p-3 border-2 border-green-400 rounded-full hover:bg-gray-800 hover:border-white"
                   >
-                    <a href="https://www.linkedin.com/in/kalpani-poornima-778b7b313/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/poornima-gimhani-778b7b313/" target="_blank" rel="noopener noreferrer">
                         <FaLinkedinIn className="text-1xl text-green-400 hover:text-white" />
                     </a>
                   </motion.div>
