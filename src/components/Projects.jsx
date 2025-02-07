@@ -10,7 +10,7 @@ const projects = [
   {
     id: 1,
     name: "Smart TechHub Management System",
-    technologies: "MongoDB,Express.js,React,Node.js,JavaScript,Postman API",
+    technologies: "MERN Stack,JavaScript,Postman API",
     image: MernImage,
     github: "https://github.com/gimhani22563828/ITP-Project",
   },
