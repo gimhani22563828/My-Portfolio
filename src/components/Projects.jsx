@@ -10,21 +10,21 @@ const projects = [
   {
     id: 1,
     name: "Smart TechHub Management System",
-    technologies: "MERN Stack",
+    technologies: "MongoDB,Express.js,React,Node.js,JavaScript,Postman API",
     image: MernImage,
     github: "https://github.com/gimhani22563828/ITP-Project",
   },
   {
     id: 2,
     name: "Hospital Management System",
-    technologies: "Java",
+    technologies: "Java,HTML,CSS,MySQL,Tomcat",
     image: javaImage,
-    github: "https://github.com/gimhani22563828",
+    github: "https://github.com/gimhani22563828/Hospital-Management-System",
   },
   {
     id: 3,
     name: "Airline Ticket Reservation System",
-    technologies: "HTML,CSS",
+    technologies: "HTML,CSS,javaScript,PHP,MySQL",
     image: AirlineImage,
     github: "https://github.com/gimhani22563828/AirLine-Ticket-Reservation-System.git",
   },
@@ -49,7 +49,7 @@ const Projects = () => {
             {projects.map((project) => (
               <div
                 key={project.id}
-                className="bg-gray-800 p-6 rounded-lg border-2 border-blue-400 hover:shadow-lg 
+                className="bg-gray-900 p-6 rounded-lg border-2 border-blue-400 hover:shadow-lg 
                 transform transition-transform duration-300 hover:scale-105"
               >
                 <img

@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
+// Services data
 const services = [
   {
     id: 1,
@@ -41,15 +43,45 @@ const services = [
   },
 ];
 
+// Custom arrow components
+const CustomPrevArrow = (props) => {
+  const { className, onClick } = props;
+  return (
+    <FaChevronLeft
+      className={`${className} text-green-400 hover:text-blue-500 text-3xl absolute left-[-40px] z-10 cursor-pointer`}
+      onClick={onClick}
+    />
+  );
+};
+
+const CustomNextArrow = (props) => {
+  const { className, onClick } = props;
+  return (
+    <FaChevronRight
+      className={`${className} text-green-400 hover:text-blue-500 text-3xl absolute right-[-40px] z-10 cursor-pointer`}
+      onClick={onClick}
+    />
+  );
+};
+
+// Slider settings with custom arrows
 const sliderSettings = {
   dots: true,
   infinite: true,
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: true,
+  prevArrow: <CustomPrevArrow />,
+  nextArrow: <CustomNextArrow />,
   responsive: [
     {
-      breakpoint: 780,
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 768,
       settings: {
         slidesToShow: 1,
       },
@@ -64,17 +96,17 @@ const Services = () => {
     setExpandedService(expandedService === id ? null : id);
   };
 
-   return (
+  return (
     <section className="bg-gray-950 text-white py-24" id="services">
-      <div className="container mt-10 mx-auto px-8 md:px-16 ">
+      <div className="container mt-12 mx-auto px-8 md:px-16">
         <h2 className="text-4xl font-bold text-center mb-12">My Services</h2>
-        <div className="mt-28 ">
-          <div className="bg-gray-950 p-8 rounded-lg shadow-xl">
+        <div className="mt-24">
+          <div className="bg-gray-900 p-12 rounded-lg shadow-xl">
             <Slider {...sliderSettings}>
               {services.map((service) => (
                 <div key={service.id} className="p-4">
                   <div
-                    className="bg-gray-800 px-10 py-9 rounded-lg min-h-[350px] border-2 border-blue-300 hover:shadow-xl transform 
+                    className="bg-gray-900 px-10 py-9 rounded-lg min-h-[350px] border-2 border-blue-300 hover:shadow-xl transform 
                     transition-transform duration-300 hover:scale-105 flex flex-col justify-between"
                   >
                     <div>
@@ -111,4 +143,5 @@ const Services = () => {
     </section>
   );
 };
+
 export default Services;

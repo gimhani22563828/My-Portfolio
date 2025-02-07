@@ -32,7 +32,7 @@ const Hero = () => {
           viewport={{ once: true }}
         >
           <div className="flex flex-col gap-3">
-            <h4 className="text-lg font-normal text-gray-300 mb-24">WELCOME TO MY WORLD</h4>
+            <h4 className="text-lg font-normal text-gray-300 mb-24">WELCOME TO MY PORTFOLIO</h4>
             <h1 className="text-4xl font-bold">
               Hi, I'm{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
